@@ -1,6 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import { food_list } from "../assets/assets";
 export const StoreContext =createContext(null)
+const url ="https://cafe-mern-app-backend.onrender.com"
 const StoreContextProvider =(props)=>{
 const [cartItems , setCartItems] = useState({});
 const addToCart =(itemId)=>{
@@ -34,6 +35,7 @@ const getTotalCartAmount=()=>{
         addToCart,
         removeFromCart,
         getTotalCartAmount,
+        url,
     };
     return (
         <StoreContext.Provider value={contextValue}>
